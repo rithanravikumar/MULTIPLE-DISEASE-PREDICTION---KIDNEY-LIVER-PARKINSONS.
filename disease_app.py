@@ -3,33 +3,46 @@ import pickle
 import numpy as np
 
 # Load models
-with open('/mnt/data/parkinsons.pkl', 'rb') as file:
-    parkinsons_model = pickle.load(file)
+def load_modelp():
+    with open("parkinsons.pkl", "rb") as f:
+        return pickle.load(f)
+model2 = load_modelp()
 
-with open('/mnt/data/kidney.pkl', 'rb') as file:
-    kidney_model = pickle.load(file)
+# with open('/mnt/data/parkinsons.pkl', 'rb') as file:
+#     parkinsons_model = pickle.load(file)
+def load_modelk():
+    with open("kidney.pkl", "rb") as f:
+        return pickle.load(f)
+model1K = load_modelK()
 
-with open('/mnt/data/liver.pkl', 'rb') as file:
-    liver_model = pickle.load(file)
+# with open('/mnt/data/kidney.pkl', 'rb') as file:
+#     kidney_model = pickle.load(file)
+def load_modelL():
+    with open("liver.pkl", "rb") as f:
+        return pickle.load(f)
+model1L = load_modelK()
+
+# with open('/mnt/data/liver.pkl', 'rb') as file:
+#     liver_model = pickle.load(file)
 
 # Define prediction functions
 def predict_parkinsons(features):
-    prediction = parkinsons_model.predict([features])
+    prediction = model2.predict([features])
     return 'Disease Detected' if prediction[0] == 1 else 'No Disease'
 
 def predict_kidney(features):
-    prediction = kidney_model.predict([features])
+    prediction = model1K.predict([features])
     return 'Disease Detected' if prediction[0] == 1 else 'No Disease'
 
 def predict_liver(features):
-    prediction = liver_model.predict([features])
+    prediction = model1L.predict([features])
     return 'Disease Detected' if prediction[0] == 1 else 'No Disease'
 
 # Streamlit app
 st.title('Disease Prediction App')
 
 # Sidebar for disease selection
-disease = st.sidebar.selectbox(
+disease = st.sidebar.sidebox(
     'Select a Disease to Predict:',
     ('Parkinsons', 'Kidney', 'Liver')
 )
