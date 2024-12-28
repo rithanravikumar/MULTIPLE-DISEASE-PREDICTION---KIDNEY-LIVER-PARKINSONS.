@@ -4,24 +4,21 @@ import numpy as np
 
 # Load models
 def load_modelp():
-    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/parkinsons.pkl
-", "rb") as f:
+    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/parkinsons.pkl", "rb") as f:
         return pickle.load(f)
 model2 = load_modelp()
 
 # with open('/mnt/data/parkinsons.pkl', 'rb') as file:
 #     parkinsons_model = pickle.load(file)
 def load_modelk():
-    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/kidney.pkl
-", "rb") as f:
+    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/kidney.pkl", "rb") as f:
         return pickle.load(f)
 model1K = load_modelK()
 
 # with open('/mnt/data/kidney.pkl', 'rb') as file:
 #     kidney_model = pickle.load(file)
 def load_modelL():
-    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/liver.pkl
-", "rb") as f:
+    with open("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./raw/refs/heads/main/liver.pkl", "rb") as f:
         return pickle.load(f)
 model1L = load_modelK()
 
