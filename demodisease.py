@@ -20,8 +20,8 @@ selected_model = st.sidebar.selectbox(
 # Parkinson's Disease
 if selected_model == "Parkinson's Disease":
     st.title("Parkinson's Disease Prediction")
-    model_path = "parkinson.pkl"
-    model, error = load_model(model_path)
+    model2 = "parkinson.pkl"
+    model, error = load_model(model2)
 
     if error:
         st.error(error)
@@ -47,8 +47,8 @@ if selected_model == "Parkinson's Disease":
 # Kidney Disease 
 elif selected_model == "Kidney Disease":
     st.title("Kidney Disease Prediction")
-    model_path = "kidney.pkl"
-    model, error = load_model(model_path)
+    model1K = "kidney.pkl"
+    model, error = load_model(model1K)
 
     if error:
         st.error(error)
@@ -108,8 +108,8 @@ elif selected_model == "Kidney Disease":
 # Liver model
 elif selected_model == "Liver Disease":
     st.title("Liver Disease Prediction")
-    model_path = "liver.pkl"
-    model, error = load_model(model_path)
+    model1L = "liver.pkl"
+    model, error = load_model(model1L)
 
     if error:
         st.error(error)
