@@ -1,6 +1,4 @@
-pickle
 streamlit
 numpy
-os
 xgboost
 randomforestclassifier
