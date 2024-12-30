@@ -47,7 +47,7 @@ st.markdown(
 # st.title("Disease Prediction")
 
 # Sidebar for disease selection
-nav = st.sidebar.radio("Select Disease Prediction⚕️🏥", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
+nav = st.sidebar.radio("Choose the Disease below⚕️🏥", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
 
 if nav == "Parkinson's Disease":
     st.header("Parkinson's Disease Prediction")
