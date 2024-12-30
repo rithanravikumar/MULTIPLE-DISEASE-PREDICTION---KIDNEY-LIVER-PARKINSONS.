@@ -4,6 +4,7 @@ import pickle
 import xgboost as xgb
 import pandas as pd
 
+
 page_bg_img = '''
 <style>
 .stApp {
@@ -40,8 +41,10 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
+
+
 # Streamlit UI
-#st.title("Disease Prediction")
+# st.title("Disease Prediction")
 
 # Sidebar for disease selection
 nav = st.sidebar.radio("Select Disease Prediction", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
@@ -87,29 +90,15 @@ if nav == "Parkinson's Disease":
                                  RPDE, DFA, spread1, spread2, D2, PPE]])
 
     # Button for prediction
-if st.button("Predict"):
-    try:
-        prediction = parkinson_model.predict(input_features) # Or use the respective model based on the disease
-        if prediction[0] == 1:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Sorry to say this, The result is positive.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-        else:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Thank God, The result is negative.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-    except Exception as e:
-        st.error(f"An error occurred during prediction: {e}")
+    if st.button("Predict"):
+        try:
+            prediction = parkinson_model.predict(input_features)
+            if prediction[0] == 1:
+                st.success("The model predicts that the individual has Parkinson's disease.")
+            else:
+                st.success("The model predicts that the individual does not have Parkinson's disease.")
+        except Exception as e:
+            st.error(f"An error occurred during prediction: {e}")
 
 elif nav == "Kidney Disease":
     st.header("Kidney Disease Prediction")
@@ -122,7 +111,7 @@ elif nav == "Kidney Disease":
     # Define input fields for Kidney disease prediction
 
     Age = st.number_input("Age", min_value=1, max_value=120, value=0)
-    Blood_Pressure = st.number_input("Blood Pressure", min_value=1, max_value=500, value=)
+    Blood_Pressure = st.number_input("Blood Pressure", min_value=1, max_value=450, value=80)
     Specific_Gravity = st.number_input("Specific Gravity", min_value=1.0, max_value=3.00, value=1.00, format="%.2f")
     Albumin = st.selectbox("Albumin", [0, 1, 2, 3, 4])  # Assuming Albumin is categorical (0-4)
     Sugar = st.selectbox("Sugar", [0, 1])  # Binary (0 or 1)
@@ -164,28 +153,14 @@ elif nav == "Kidney Disease":
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
     if st.button("Predict"):
-    try:
-        prediction = kidney_model.predict(input_features)  # Or use the respective model based on the disease
-        if prediction[0] == 1:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Sorry to say this, The result is positive.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-        else:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Thank God, The result is negative.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-    except Exception as e:
-        st.error(f"An error occurred during prediction: {e}")
+        try:
+            prediction = kidney_model.predict(input_features)
+            if prediction[0] == 1:
+                st.success("The model predicts that the individual has Kidney disease.")
+            else:
+                st.success("The model predicts that the individual does not have Kidney disease.")
+        except Exception as e:
+            st.error(f"An error occurred during prediction: {e}")
 
 elif nav == "Liver Disease":
     st.header("Liver Disease Prediction")
@@ -218,40 +193,21 @@ elif nav == "Liver Disease":
     for col in range(input_features.shape[1]):
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
-
     if st.button("Predict"):
-    try:
-        prediction = liver_model.predict(input_features)  # Or use the respective model based on the disease
-        if prediction[0] == 1:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Sorry to say this, The result is positive.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-        else:
-            st.markdown(
-                """
-                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                    Thank God, The result is negative.
-                </div>
-                """, 
-                unsafe_allow_html=True
-            )
-    except Exception as e:
-        st.error(f"An error occurred during prediction: {e}")
-
-     
-# st.text("Thank you for visiting Rithan's Diagnostic centre !!!")
-# st.text("We would highly value your feedback !!!")
-
+        try:
+            prediction = liver_model.predict(input_features)
+            if prediction[0] == 0:
+                st.success("The model predicts that the individual does not have Liver disease.")
+            else:
+                st.success("The model predicts that the individual has Liver disease.")
+        except Exception as e:
+            st.error(f"An error occurred during prediction: {e}")
 
 st.markdown(
     """
     <h1 style="background-color:purple; color:white; padding: 10px; text-align: center; border-radius: 5px;">
         Thank you for visiting Rithan's Diagnostic centre😊
+        We care about you.
     </h1>
     """, unsafe_allow_html=True
 )
