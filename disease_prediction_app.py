@@ -51,6 +51,7 @@ nav = st.sidebar.radio("Choose the Disease below⚕️🏥", ["Parkinson's Disea
 
 if nav == "Parkinson's Disease":
     st.header("Parkinson's Disease Prediction")
+    st.text("Please enter the required fields:")
     # Load the parkinson's model
     try:
         parkinson_model = pickle.load(open(r'parkinsons.pkl', 'rb'))
@@ -116,6 +117,7 @@ if nav == "Parkinson's Disease":
 
 elif nav == "Kidney Disease":
     st.header("Kidney Disease Prediction")
+    st.text("Please enter the required fields:")
     # Load the kidney model
     try:
         kidney_model = pickle.load(open(r'kidney.pkl', 'rb'))
@@ -192,6 +194,7 @@ elif nav == "Kidney Disease":
 
 elif nav == "Liver Disease":
     st.header("Liver Disease Prediction")
+    st.text("Please enter the required fields:")
 
     # Load the liver's model
     try:
