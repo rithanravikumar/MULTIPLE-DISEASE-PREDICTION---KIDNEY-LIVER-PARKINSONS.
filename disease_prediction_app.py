@@ -237,7 +237,7 @@ elif nav == "Liver Disease":
                 st.markdown(
                     """
                     <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
-                        Sorry to say this, The result is positive.
+                        Thank God, The result is negative.
                     </div>
                     """,
                     unsafe_allow_html=True
