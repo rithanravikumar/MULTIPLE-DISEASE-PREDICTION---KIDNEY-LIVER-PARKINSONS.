@@ -4,6 +4,25 @@ import pickle
 import xgboost as xgb
 import pandas as pd
 
+background_image_url = "https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./blob/main/3635061.jpg?raw=true"
+page_bg_css = """
+<style>
+    body {{
+        background-image: url("{background_image_url}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+    }}
+    .stButton>button {{
+        background-color: #4CAF50;
+        color: white;
+    }}
+</style>
+"""
+
+st.markdown(page_bg_css, unsafe_allow_html=True)
+
 # Streamlit UI
 st.title("Disease Prediction")
 
