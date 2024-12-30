@@ -47,7 +47,7 @@ st.markdown(
 # st.title("Disease Prediction")
 
 # Sidebar for disease selection
-nav = st.sidebar.radio("Select Disease Prediction", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
+nav = st.sidebar.radio("Select Disease Prediction⚕️🏥", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
 
 if nav == "Parkinson's Disease":
     st.header("Parkinson's Disease Prediction")
@@ -96,7 +96,7 @@ if nav == "Parkinson's Disease":
             if prediction[0] == 1:
                 st.markdown(
                     """
-                    <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    <div style="background-color:red; color:white; padding:15px; border-radius:10px; text-align:center;">
                         Sorry to say this, The result is positive.
                     </div>
                     """,
@@ -170,9 +170,23 @@ elif nav == "Kidney Disease":
         try:
             prediction = kidney_model.predict(input_features)
             if prediction[0] == 1:
-                st.success("The model predicts that the individual has Kidney disease.")
+                st.markdown(
+                    """
+                    <div style="background-color:red; color:white; padding:15px; border-radius:10px; text-align:center;">
+                        Sorry to say this, The result is positive.
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             else:
-                st.success("The model predicts that the individual does not have Kidney disease.")
+                st.markdown(
+                    """
+                    <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                        Thank God, The result is negative.
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )        
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
@@ -210,17 +224,31 @@ elif nav == "Liver Disease":
     if st.button("Predict"):
         try:
             prediction = liver_model.predict(input_features)
-            if prediction[0] == 0:
-                st.success("The model predicts that the individual does not have Liver disease.")
+            if prediction[0] == 1:
+                st.markdown(
+                    """
+                    <div style="background-color:red; color:white; padding:15px; border-radius:10px; text-align:center;">
+                        Sorry to say this, The result is positive.
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             else:
-                st.success("The model predicts that the individual has Liver disease.")
+                st.markdown(
+                    """
+                    <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                        Sorry to say this, The result is positive.
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
 st.markdown(
     """
     <h1 style="background-color:purple; color:white; padding: 10px; text-align: center; border-radius: 5px;">
-        Thank you for visiting Rithan's Diagnostic centre😊
+        Thank you for visiting😊
         We care about you.
     </h1>
     """, unsafe_allow_html=True
