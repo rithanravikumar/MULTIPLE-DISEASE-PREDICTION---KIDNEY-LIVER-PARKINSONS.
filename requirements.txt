@@ -1,4 +1,6 @@
 streamlit
-os
 numpy
-
+pandas
+xgboost
+scikit-learn
+random forest classifier
