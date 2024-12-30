@@ -34,7 +34,8 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 st.markdown(
     """
     <h1 style="background-color:white; color:black; padding: 20px; text-align: center; border-radius: 5px;">
-        Hello!! Let's diagnose the disease based on the data.
+        Welcome to Rithan's Diagnostic Centre !!!
+        Let's Diagnose the disease...
     </h1>
     """, unsafe_allow_html=True
 )
@@ -199,4 +200,15 @@ elif nav == "Liver Disease":
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
-st.text("Thank you for using the dashboard!")
+st.text("Thank you for visiting Rithan's Diagnostic centre !!!")
+st.text("We would highly value your feedback !!!")
+
+
+st.markdown(
+    """
+    <h1 style="background-color:blue; color:black; padding: 20px; text-align: center; border-radius: 5px;">
+        Thank you for visiting Rithan's Diagnostic centre😊
+        We would highly value your feedback !!!
+    </h1>
+    """, unsafe_allow_html=True
+)
