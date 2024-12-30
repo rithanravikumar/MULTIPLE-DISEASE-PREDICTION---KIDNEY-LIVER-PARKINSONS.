@@ -4,24 +4,40 @@ import pickle
 import xgboost as xgb
 import pandas as pd
 
-background_image_url = "https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./blob/main/3635061.jpg?raw=true"
-page_bg_css = """
+page_bg_img = '''
 <style>
-    body {{
-        background-image: url("{background_image_url}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        color: white;
-    }}
-    .stButton>button {{
-        background-color: #4CAF50;
-        color: white;
-    }}
-</style>
-"""
+.stApp {
+    background-image: url("https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./blob/main/3635061.jpg?raw=true");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-st.markdown(page_bg_css, unsafe_allow_html=True)
+.st-selectbox, .st-number_input, .st-slider, .st-text_input, .st-date_input, .st-radio, .st-multiselect {
+    background-color: black !important;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stSelectbox>label, .stNumberInput>label, .stSlider>label, .stTextInput>label, .stDateInput>label, .stRadio>label, .stMultiselect>label {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+# Streamlit App Title with Custom White Background and Brown Text
+st.markdown(
+    """
+    <h1 style="background-color:white; color:black; padding: 20px; text-align: center; border-radius: 5px;">
+        Hello!! Let's predict House prices using historical sales data.
+    </h1>
+    """, unsafe_allow_html=True
+)
 
 # Streamlit UI
 st.title("Disease Prediction")
