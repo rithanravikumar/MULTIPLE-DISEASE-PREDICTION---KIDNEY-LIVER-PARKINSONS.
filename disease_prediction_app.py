@@ -166,7 +166,7 @@ elif nav == "Kidney Disease":
     for col in range(input_features.shape[1]):
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
-    if st.button("Predict"):
+    if st.button("Diagnose now"):
         try:
             prediction = kidney_model.predict(input_features)
             if prediction[0] == 1:
@@ -221,7 +221,7 @@ elif nav == "Liver Disease":
     for col in range(input_features.shape[1]):
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
-    if st.button("Predict"):
+    if st.button("Diagnose now"):
         try:
             prediction = liver_model.predict(input_features)
             if prediction[0] == 1:
