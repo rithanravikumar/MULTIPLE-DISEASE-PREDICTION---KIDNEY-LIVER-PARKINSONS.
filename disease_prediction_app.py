@@ -88,14 +88,28 @@ if nav == "Parkinson's Disease":
 
     # Button for prediction
     if st.button("Predict"):
-        try:
-            prediction = parkinson_model.predict(input_features)
-            if prediction[0] == 1:
-                st.success("Sorry to say this, The result is postive.")
-            else:
-                st.success("Thank God, The result is negative.")
-        except Exception as e:
-            st.error(f"An error occurred during prediction: {e}")
+    try:
+        prediction = parkinson_model.predict(input_features)  # Or use the respective model based on the disease
+        if prediction[0] == 1:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Sorry to say this, The result is positive.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Thank God, The result is negative.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+    except Exception as e:
+        st.error(f"An error occurred during prediction: {e}")
 
 
 elif nav == "Kidney Disease":
@@ -151,15 +165,28 @@ elif nav == "Kidney Disease":
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
     if st.button("Predict"):
-        try:
-            prediction = kidney_model.predict(input_features)
-            if prediction[0] == 1:
-                st.success("Sorry to say this, The result is postive.")
-            else:
-                st.success("Thank God, The result is negative.")
-        except Exception as e:
-            st.error(f"An error occurred during prediction: {e}")
-
+    try:
+        prediction = kidney_model.predict(input_features)  # Or use the respective model based on the disease
+        if prediction[0] == 1:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Sorry to say this, The result is positive.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Thank God, The result is negative.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+    except Exception as e:
+        st.error(f"An error occurred during prediction: {e}")
 
 elif nav == "Liver Disease":
     st.header("Liver Disease Prediction")
@@ -192,15 +219,30 @@ elif nav == "Liver Disease":
     for col in range(input_features.shape[1]):
         input_features[:, col] = [str(x).encode('utf-8').decode('utf-8') if isinstance(x, str) else x for x in input_features[:, col]]
     # Button for prediction
+
     if st.button("Predict"):
-        try:
-            prediction = liver_model.predict(input_features)
-            if prediction[0] == 0:
-                st.success("Thank God, The result is negative.")
-            else:
-                st.success("Sorry to say this, The result is postive.")
-        except Exception as e:
-            st.error(f"An error occurred during prediction: {e}")
+    try:
+        prediction = liver_model.predict(input_features)  # Or use the respective model based on the disease
+        if prediction[0] == 1:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Sorry to say this, The result is positive.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+        else:
+            st.markdown(
+                """
+                <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
+                    Thank God, The result is negative.
+                </div>
+                """, 
+                unsafe_allow_html=True
+            )
+    except Exception as e:
+        st.error(f"An error occurred during prediction: {e}")
 
      
 # st.text("Thank you for visiting Rithan's Diagnostic centre !!!")
