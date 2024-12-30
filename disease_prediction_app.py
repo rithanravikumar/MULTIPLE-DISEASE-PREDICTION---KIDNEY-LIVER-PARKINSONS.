@@ -87,11 +87,11 @@ if nav == "Parkinson's Disease":
                                  RPDE, DFA, spread1, spread2, D2, PPE]])
 
     # Button for prediction
-    if st.button("Predict"):
+if st.button("Predict"):
     try:
         prediction = parkinson_model.predict(input_features)  # Or use the respective model based on the disease
-        if prediction[0] == 1:
-            st.markdown(
+        if prediction[0] == 1:   
+                st.markdown(
                 """
                 <div style="background-color:green; color:white; padding:15px; border-radius:10px; text-align:center;">
                     Sorry to say this, The result is positive.
@@ -110,7 +110,6 @@ if nav == "Parkinson's Disease":
             )
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
-
 
 elif nav == "Kidney Disease":
     st.header("Kidney Disease Prediction")
