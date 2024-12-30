@@ -10,12 +10,12 @@ st.title("Disease Prediction")
 # Sidebar for disease selection
 nav = st.sidebar.radio("Select Disease Prediction", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
 
-if nav == "Parkinson's Disease":
+if nav == "Parkinsons's Disease":
     st.header("Parkinson's Disease Prediction")
     
     # Load the Parkinson's model
     try:
-        parkinson_model = pickle.load(open(r'XGBparkinson.pkl', 'rb'))
+        parkinson_model = pickle.load(open(r'parkinsons.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
         st.stop()
@@ -65,7 +65,7 @@ elif nav == "Kidney Disease":
     st.header("Kidney Disease Prediction")
     # Load the kidney model
     try:
-        kidney_model = pickle.load(open(r'XGBkidney.pkl', 'rb'))
+        kidney_model = pickle.load(open(r'kidney.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
         st.stop() 
@@ -128,7 +128,7 @@ elif nav == "Liver Disease":
 
     # Load the liver's model
     try:
-        liver_model = pickle.load(open('XGBLiver.pkl', 'rb'))
+        liver_model = pickle.load(open('Liver.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
         st.stop()    
