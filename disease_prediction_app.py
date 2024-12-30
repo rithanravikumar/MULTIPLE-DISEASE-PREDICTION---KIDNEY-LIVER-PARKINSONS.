@@ -112,7 +112,7 @@ if st.button("Predict"):
         st.error(f"An error occurred during prediction: {e}")
 
 elif nav == "Kidney Disease":
-    st.header("Kidneeeeeeeey Disease Prediction")
+    st.header("Kidney Disease Prediction")
     # Load the kidney model
     try:
         kidney_model = pickle.load(open(r'kidney.pkl', 'rb'))
