@@ -121,8 +121,8 @@ elif nav == "Kidney Disease":
         st.stop() 
     # Define input fields for Kidney disease prediction
 
-    Age = st.number_input("Age", min_value=1, max_value=120, value=30)
-    Blood_Pressure = st.number_input("Blood Pressure", min_value=1, max_value=200, value=80)
+    Age = st.number_input("Age", min_value=1, max_value=120, value=0)
+    Blood_Pressure = st.number_input("Blood Pressure", min_value=1, max_value=500, value=)
     Specific_Gravity = st.number_input("Specific Gravity", min_value=1.0, max_value=3.00, value=1.00, format="%.2f")
     Albumin = st.selectbox("Albumin", [0, 1, 2, 3, 4])  # Assuming Albumin is categorical (0-4)
     Sugar = st.selectbox("Sugar", [0, 1])  # Binary (0 or 1)
@@ -199,7 +199,7 @@ elif nav == "Liver Disease":
 
     # Define input fields for Liver disease prediction
     
-    Age= st.number_input("Age", min_value=1, max_value=120, value=30)
+    Age= st.number_input("Age", min_value=1, max_value=120, value=0)
     Gender = st.selectbox("Gender", [1.0, 0.0], format_func=lambda x: "Male" if x == 1.0 else "Female")
     Total_Bilirubin= st.number_input("Total Bilirubin", min_value=0.0, value=0.0)
     Direct_Bilirubin= st.number_input("Direct Bilirubin", min_value=0.0, value=0.0)
