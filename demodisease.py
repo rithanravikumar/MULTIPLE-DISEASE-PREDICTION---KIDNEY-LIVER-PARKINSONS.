@@ -10,16 +10,16 @@ st.title("Disease Prediction")
 # Sidebar for disease selection
 nav = st.sidebar.radio("Select Disease Prediction", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
 
-if nav == "Parkinsons's Disease":
+if nav == "Parkinson's Disease":
     st.header("Parkinson's Disease Prediction")
-    
-    # Load the Parkinson's model
+    # Load the parkinson's model
     try:
         parkinson_model = pickle.load(open(r'parkinsons.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
-        st.stop()
+        st.stop() 
 
+    
     # Input fields for Parkinson's disease prediction
     MDVP_Fo_Hz = st.number_input("Fundamental Frequency (MDVP:Fo(Hz))", min_value=0.0, value=0.0)
     MDVP_Fhi_Hz = st.number_input("Maximum Frequency (MDVP:Fhi(Hz))", min_value=0.0, value=0.0)
