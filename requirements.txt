@@ -2,5 +2,4 @@ streamlit
 numpy
 pandas
 xgboost
-randomforestclassifier
 scikit-learn
