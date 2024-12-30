@@ -15,7 +15,7 @@ if nav == "Parkinsons's Disease":
     
     # Load the Parkinson's model
     try:
-        parkinson_model = pickle.load(open(r'https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./blob/main/parkinsons.pkl', 'rb'))
+        parkinson_model = pickle.load(open(r'parkinsons.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
         st.stop()
