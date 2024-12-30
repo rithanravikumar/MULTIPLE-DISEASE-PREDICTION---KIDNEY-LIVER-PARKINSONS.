@@ -97,14 +97,14 @@ if nav == "Parkinson's Disease":
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
-     st.markdown(
-        f"""
-        <div style="background-color: #228B22; color: #FFFFFF; padding: 15px; border-radius: 5px; text-align: center; font-size: 40px;">
-            <strong>{prediction}</strong>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        st.markdown(
+           f"""
+           <div style="background-color: #228B22; color: #FFFFFF; padding: 15px; border-radius: 5px; text-align: center; font-size: 40px;">
+               <strong>{prediction}</strong>
+           </div>
+           """,
+           unsafe_allow_html=True,
+        )
 
 
 
