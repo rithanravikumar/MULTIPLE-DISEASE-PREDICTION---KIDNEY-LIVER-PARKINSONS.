@@ -128,7 +128,7 @@ elif nav == "Liver Disease":
 
     # Load the liver's model
     try:
-        liver_model = pickle.load(open(r'https://github.com/rithanravikumar/MULTIPLE-DISEASE-PREDICTION---KIDNEY-LIVER-PARKINSONS./blob/main/liver.pkl', 'rb'))
+        liver_model = pickle.load(open(r'liver.pkl', 'rb'))
     except FileNotFoundError:
         st.error("Model file not found. Please check the file path.")
         st.stop()    
