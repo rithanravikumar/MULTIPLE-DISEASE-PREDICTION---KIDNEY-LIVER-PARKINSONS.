@@ -97,16 +97,6 @@ if nav == "Parkinson's Disease":
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
-        st.markdown(
-           f"""
-           <div style="background-color: #228B22; color: #FFFFFF; padding: 15px; border-radius: 5px; text-align: center; font-size: 40px;">
-               <strong>{prediction}</strong>
-           </div>
-           """,
-           unsafe_allow_html=True,
-        )
-
-
 
 elif nav == "Kidney Disease":
     st.header("Kidney Disease Prediction")
@@ -171,16 +161,6 @@ elif nav == "Kidney Disease":
             st.error(f"An error occurred during prediction: {e}")
 
 
-     st.markdown(
-        f"""
-        <div style="background-color: #228B22; color: #FFFFFF; padding: 15px; border-radius: 5px; text-align: center; font-size: 40px;">
-            <strong>{prediction}</strong>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
 elif nav == "Liver Disease":
     st.header("Liver Disease Prediction")
 
@@ -222,16 +202,7 @@ elif nav == "Liver Disease":
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
-     st.markdown(
-        f"""
-        <div style="background-color: #228B22; color: #FFFFFF; padding: 15px; border-radius: 5px; text-align: center; font-size: 40px;">
-            <strong>{prediction}</strong>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
+     
 # st.text("Thank you for visiting Rithan's Diagnostic centre !!!")
 # st.text("We would highly value your feedback !!!")
 
@@ -240,7 +211,6 @@ st.markdown(
     """
     <h1 style="background-color:purple; color:white; padding: 10px; text-align: center; border-radius: 5px;">
         Thank you for visiting Rithan's Diagnostic centre😊
-        
     </h1>
     """, unsafe_allow_html=True
 )
