@@ -34,13 +34,13 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 st.markdown(
     """
     <h1 style="background-color:white; color:black; padding: 20px; text-align: center; border-radius: 5px;">
-        Hello!! Let's predict House prices using historical sales data.
+        Hello!! Let's diagnose the disease based on the data.
     </h1>
     """, unsafe_allow_html=True
 )
 
 # Streamlit UI
-st.title("Disease Prediction")
+#st.title("Disease Prediction")
 
 # Sidebar for disease selection
 nav = st.sidebar.radio("Select Disease Prediction", ["Parkinson's Disease", "Kidney Disease", "Liver Disease"])
