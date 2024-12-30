@@ -89,7 +89,7 @@ if nav == "Parkinson's Disease":
     # Button for prediction
 if st.button("Predict"):
     try:
-        prediction = parkinson_model.predict(input_features # Or use the respective model based on the disease
+        prediction = parkinson_model.predict(input_features) # Or use the respective model based on the disease
         if prediction[0] == 1:
             st.markdown(
                 """
