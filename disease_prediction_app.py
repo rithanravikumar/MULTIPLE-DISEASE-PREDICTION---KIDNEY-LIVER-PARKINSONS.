@@ -91,9 +91,9 @@ if nav == "Parkinson's Disease":
         try:
             prediction = parkinson_model.predict(input_features)
             if prediction[0] == 1:
-                st.success("The model predicts that the individual has Parkinson's disease.")
+                st.success("Sorry to say this, The result is postive.")
             else:
-                st.success("The model predicts that the individual does not have Parkinson's disease.")
+                st.success("Thank God, The result is negative.")
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
@@ -154,9 +154,9 @@ elif nav == "Kidney Disease":
         try:
             prediction = kidney_model.predict(input_features)
             if prediction[0] == 1:
-                st.success("The model predicts that the individual has Kidney disease.")
+                st.success("Sorry to say this, The result is postive.")
             else:
-                st.success("The model predicts that the individual does not have Kidney disease.")
+                st.success("Thank God, The result is negative.")
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
@@ -196,9 +196,9 @@ elif nav == "Liver Disease":
         try:
             prediction = liver_model.predict(input_features)
             if prediction[0] == 0:
-                st.success("The model predicts that the individual does not have Liver disease.")
+                st.success("Thank God, The result is negative.")
             else:
-                st.success("The model predicts that the individual has Liver disease.")
+                st.success("Sorry to say this, The result is postive.")
         except Exception as e:
             st.error(f"An error occurred during prediction: {e}")
 
