@@ -206,7 +206,7 @@ st.text("We would highly value your feedback !!!")
 
 st.markdown(
     """
-    <h1 style="background-color:blue; color:black; padding: 20px; text-align: center; border-radius: 5px;">
+    <h1 style="background-color:purple; color:white; padding: 10px; text-align: center; border-radius: 5px;">
         Thank you for visiting Rithan's Diagnostic centre😊
         We would highly value your feedback !!!
     </h1>
